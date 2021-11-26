@@ -1,4 +1,5 @@
-import * as movieRepository from "../repositories/moviesRepository.js"
+import dayjs from "dayjs";
+import * as movieRepository from "../repositories/moviesRepository.js";
 
 const handleMovieObject = (result) => {
     const movie = result.rows[0];
@@ -27,4 +28,38 @@ const handleMovieInfo = async (req) => {
     return handleMovieObject(result);
 };
 
-export default handleMovieInfo
+const handleSessionsObject = (result) => {
+    const sessions = {
+        movie: {
+            title: result.rows.title,
+            image: result.rows.image,
+        },
+        sessions : result.rows.map((session) => ({
+            id: session.id,
+            hour: dayjs(session.hour).format('HH:mm'),
+            date: dayjs(session.hour).format('YYYY/MM/DD'),
+            weekday: dayjs(session.hour).$W,
+        })),
+    }
+
+    return sessions
+}
+
+const handleSessionsInfo = async (req) => {
+    const {
+        id
+    } = req.params;
+
+    const result = await movieRepository.selectAllMovieSessions(id);
+
+    if(!result.rowCount) {
+        return null
+    }
+
+    return handleSessionsObject(result)
+}
+
+export {
+    handleMovieInfo,
+    handleSessionsInfo,
+}
