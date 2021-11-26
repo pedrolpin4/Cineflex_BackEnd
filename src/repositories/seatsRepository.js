@@ -9,6 +9,10 @@ const selectAllSessionSeats = async (id) => {
 
     return result
 }
+
+const anything = () => Number('2');
+
 export {
     selectAllSessionSeats,
+    anything,
 }

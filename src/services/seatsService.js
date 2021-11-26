@@ -41,4 +41,5 @@ const handleSessionsSeats = async (req) => {
 
 export {
     handleSessionsSeats,
+    handleSeatsObject,
 }
