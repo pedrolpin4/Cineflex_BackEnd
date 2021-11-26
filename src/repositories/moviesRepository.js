@@ -5,6 +5,12 @@ const selectAllMovies = async () => {
     return result
 }
 
+const selectSpecificMovie = async (id) => {
+    const result = await connection.query('SELECT * FROM movies_info WHERE id = $1', [id]);
+    return result
+}
+
 export {
     selectAllMovies,
+    selectSpecificMovie,
 }
