@@ -31,8 +31,8 @@ const handleMovieInfo = async (req) => {
 const handleSessionsObject = (result) => {
     const sessions = {
         movie: {
-            title: result.rows.title,
-            image: result.rows.image,
+            title: result.rows[0].title,
+            image: result.rows[0].image,
         },
         sessions : result.rows.map((session) => ({
             id: session.id,
