@@ -1,6 +1,7 @@
 import '../src/setup';
 import supertest from 'supertest';
 import app from '../src/app';
+import connection from "../src/database.js"
 
 describe('GET /sessions/:id/seats', () => {
     it('Should return 200 and specific movies info', async () => {
@@ -20,6 +21,12 @@ describe('GET /sessions/:id/seats', () => {
 })
 
 describe('POST /seats/bookmany', () => {
+
+    afterAll(async () => {
+        await connection.query('DELETE FROM buyers_info WHERE seat_id = 1');
+        await connection.query("UPDATE session_seats SET is_selected = 'false' WHERE id = 1")
+    })
+
     it('Should return 400 if invalid body', async () => {
         const body = {
             buyers: {id: 2, name: 'pedrin', cpf: '12019'}
@@ -49,5 +56,16 @@ describe('POST /seats/bookmany', () => {
         const result = await supertest(app).post('/seats/bookmany')
             .send(body);
             expect(result.status).toEqual(201);
+    });
+
+    it('Should return 409 if not existent seat (s)', async () => {
+        const body = {
+            ids: [1],
+            buyers: [{id: 1, name: 'pedrin', cpf: '18615158711'}],
+        }
+
+        const result = await supertest(app).post('/seats/bookmany')
+            .send(body);
+            expect(result.status).toEqual(409);
     });
 })

@@ -1,6 +1,6 @@
 import connection from "../database.js"
 
-const selectAllSessionSeats = async (id) => {
+const selectAllSessionInfo = async (id) => {
     const result = await connection.query(`SELECT session_seats.*, movies_info.title, movies_info.image,  
     movie_sessions.hour, movie_sessions.movie_id FROM session_seats 
     JOIN movie_sessions ON session_seats.session_id = movie_sessions.id
@@ -10,9 +10,23 @@ const selectAllSessionSeats = async (id) => {
     return result
 }
 
-const anything = () => Number('2');
+const selectAllSeats = async () => {
+    const result = await connection.query('SELECT * FROM session_seats');
+
+    return result;
+}
+
+const updateSeatsSelection = async (query) => {
+    await connection.query(query);
+}
+
+const insertBuyerIndo = async (query) => {
+    await connection.query(query);
+}
 
 export {
-    selectAllSessionSeats,
-    anything,
+    selectAllSessionInfo,
+    selectAllSeats,
+    updateSeatsSelection,
+    insertBuyerIndo,
 }
