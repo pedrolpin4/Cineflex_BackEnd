@@ -1,13 +1,9 @@
-import connection from "../database.js";
+import * as moviesRepository from "../repositories/moviesRepository.js"
 
 const getMovies = async (req, res) => {
-    const result = await connection.query("SELECT * FROM movies_info");
-    const movies = result.rows.map(movie => ({
-        id: movie.id,
-        title: movie.title,
-        image: movie.image,
-    }));
-
+    const result = await moviesRepository.selectAllMovies();
+    const movies = result.rows;
+    
     res.send(movies)
 }
 
