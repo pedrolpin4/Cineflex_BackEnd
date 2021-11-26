@@ -11,11 +11,11 @@ app.get('/health', (req, res) => {
   res.sendStatus(200);
 });
 
-app.get('/sessions/:id/seats', (req, res) => seatControllers.getSeats(req, res))
-
 app.get('/movies', (req, res) => movieController.getMovies(req, res));
 app.get('/movies/:id', (req, res) => movieController.getMovieInfo(req, res));
 app.get('/movies/:id/sessions', (req, res) => movieController.getMovieSessions(req, res));
 
+app.get('/sessions/:id/seats', (req, res) => seatControllers.getSeats(req, res))
+app.post('/seats/bookmany', (req, res) => seatControllers.bookSeats(req, res))
 
 export default app;
