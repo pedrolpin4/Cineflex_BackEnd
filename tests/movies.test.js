@@ -13,3 +13,24 @@ describe('GET /movies', () => {
         })
   });
 });
+
+describe('GET /movies/:id', () => {
+    it('Should return 200 and specific movies info', async () => {
+        const result = await supertest(app).get('/movies/1');
+            expect(result.status).toEqual(200);
+            expect(result.body).toEqual({
+                id: expect.any(Number),
+                imdbId: expect.any(String),
+                image: expect.any(String),
+                title: expect.any(String),
+                year: expect.any(Number),
+                rating: expect.any(Number),
+                runningTime: expect.any(Number), 
+            })
+    });
+
+    it('Should return 404 if not existent movie', async () => {
+        const result = await supertest(app).get('/movies/3500');
+            expect(result.status).toEqual(404);
+    });
+})

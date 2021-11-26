@@ -11,6 +11,7 @@ app.get('/health', (req, res) => {
 });
 
 app.get('/movies', (req, res) => movieController.getMovies(req, res));
+app.get('/movies/:id', (req, res) => movieController.getMovieInfo(req, res))
 
 
 export default app;
