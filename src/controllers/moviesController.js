@@ -33,16 +33,18 @@ const getMovieSessions = async (req, res) => {
         WHERE movie_id = $1
     `, [id]);
 
-    const sessions = result.rows.map((session) => ({
-        id: session.id,
-        hour: dayjs(session.hour).format('HH:mm'),
-        day: dayjs(session.hour).format('YYYY/MM/DD'),
-        weekday: dayjs(session.hour).$W,
+    const sessions = {
         movie: {
-            title: session.title,
-            image: session.image,
-        }
-    }));
+            title: result.rows.title,
+            image: result.rows.image,
+        },
+        sessions : result.rows.map((session) => ({
+            id: session.id,
+            hour: dayjs(session.hour).format('HH:mm'),
+            date: dayjs(session.hour).format('YYYY/MM/DD'),
+            weekday: dayjs(session.hour).$W,
+        })),
+    }
 
     if(!result.rowCount) {
       return res.sendStatus(404);
