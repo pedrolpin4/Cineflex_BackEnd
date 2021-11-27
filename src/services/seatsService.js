@@ -13,6 +13,7 @@ const handleSeatsObject = (session) => {
             id: session[0].session_id,
             hour: dayjs(session[0].hour).format('HH:mm'),
             weekday: dayjs(session[0].hour).$W,
+            date: dayjs(session.hour).format('YYYY/MM/DD'),
         },
         seats: [...session.map(seat => ({
             id: seat.id,
