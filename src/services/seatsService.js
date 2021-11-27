@@ -65,7 +65,7 @@ const validateSeat = (ids, result, buyers) => {
             return;
         }
 
-        seatsQuery += `id = ${id} OR`;
+        seatsQuery += `id = ${id} OR `;
     });
 
     return {
