@@ -12,18 +12,17 @@ Think about an ordinary movie theater, ok, now forget it! Cineflex is not an app
 
 ## How to run?
 - Frontend
-    - clone this repository;
-    - Go to this repository path on your device's terminal;
+    - clone my Cineflex_React repository;
+    - Go to that repository path on your device's terminal;
     - type "npm i" => the necessary packages will be installed on your device;
     - type "npm start" => the project will run in your localhost:3000;
     
 - Backend
-    - clone my repository Cineflex_BackEnd;
+    - clone this repository;
     - Go to this repository path on your device's terminal;
     - type "npm i" => the necessary packages will be installed on your device;
     - open the file "database_backup.sql", then copy and paste the script on some database you'll create on your postgres terminal;
     - create an .env.dev file following the .env.example template using the credentials of the database you've created above;
-    - create an .env.dev file following the .env.example template;
     - type "npm start:dev" => the project will run in your localhost:`${ThePort you have setted}`;
 
 ## What comes next?
