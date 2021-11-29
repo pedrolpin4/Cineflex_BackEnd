@@ -11,13 +11,7 @@ Think about an ordinary movie theater, ok, now forget it! Cineflex is not an app
 ## Resourses
 
 ## How to run?
-- Frontend
-    - clone my Cineflex_React repository;
-    - Go to that repository path on your device's terminal;
-    - type "npm i" => the necessary packages will be installed on your device;
-    - type "npm start" => the project will run in your localhost:3000;
-    
-- Backend
+
 1. Clone this repository
 2. Install dependencies
 ```bash
@@ -35,9 +29,10 @@ npm start
 ```bash
 npm start:dev
 ```
+
 7. The project will run in your localhost:`${ThePort you have setted}`;
 
-8.If you want to run my frontEnd project too, check it out on https://github.com/pedrolpin4/Cineflex_React
+8. If you want to run my frontEnd project too, check it out on https://github.com/pedrolpin4/Cineflex_React
 
 ## What comes next?
 
