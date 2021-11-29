@@ -8,7 +8,15 @@
 
 Think about an ordinary movie theater, ok, now forget it! Cineflex is not an app for an ordinary movie theater, this platform is about a theater which only broadcasts the IMDB 50 top rated movies. If you are a cinefile that loves to watch movies your family thinks like: "what? this is from the 60's", this is the theater for you to go.
 
-## Resourses
+<br/>
+
+## Features
+
+- [x] see the movies' list through a responsive design
+- [x] choose a movie to navigate through its infos, such as rating, plot, running time, genres and much more
+- [x] see the availaable sessions to fit it into your schedule
+- [x] book some tickets based on the seats that are available
+- [x] check if the tickects info are ok in a confirmation screen
 
 ## How to run?
 
