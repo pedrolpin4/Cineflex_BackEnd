@@ -16,7 +16,7 @@ Think about an ordinary movie theater, ok, now forget it! Cineflex is not an app
 - [x] choose a movie to navigate through its infos, such as rating, plot, running time, genres and much more
 - [x] see the availaable sessions to fit it into your schedule
 - [x] book some tickets based on the seats that are available
-- [x] check if the tickects info are ok in a confirmation screen
+- [x] check if the tickets' info are ok in a confirmation screen
 
 ## How to run?
 
