@@ -1,29 +1,46 @@
 
 # Cineflex
 <p align="center" >
- <img src = "https://user-images.githubusercontent.com/87671165/143668159-19e30204-3365-4b25-8eee-2baadbd3123e.gif" height = "500px"/>
+ <img src = "https://user-images.githubusercontent.com/87671165/143816938-c41ec681-c979-4ef4-9031-ba6e5d4fc701.gif" height = "500px"/>
 </p>
 
 ## About
 
-Think about an ordinary movie theater, ok, now forget it! Cineflex is not an app for an ordinary movie theater, this platform is about a theater which only broadcasts the IMDB 50 top rated movies. If you are a cinefile that loves to watch movies your family thinks like: "what? this is from the 60's", this is the theater for you to go.
+Think about an ordinary movie theater, ok, now forget it! Cineflex is not an app for an ordinary movie theater, this platform is about a theater which only broadcasts the IMDB 50 top rated movies. If you are a cinefile that loves to watch movies your family thinks like: "what? this is from the 60's", this is the theater for you to go. Check the production version here: <a href = "https://cineflex-gamma.netlify.app">Click Me!!</a>
 
-## Resourses
+<br/>
+
+## Features
+
+- [x] see the movies' list through a responsive design
+- [x] choose a movie to navigate through its infos, such as rating, plot, running time, genres and much more
+- [x] see the availaable sessions to fit it into your schedule
+- [x] book some tickets based on the seats that are available
+- [x] check if the tickets' info are ok in a confirmation screen
 
 ## How to run?
-- Frontend
-    - clone my Cineflex_React repository;
-    - Go to that repository path on your device's terminal;
-    - type "npm i" => the necessary packages will be installed on your device;
-    - type "npm start" => the project will run in your localhost:3000;
-    
-- Backend
-    - clone this repository;
-    - Go to this repository path on your device's terminal;
-    - type "npm i" => the necessary packages will be installed on your device;
-    - open the file "database_backup.sql", then copy and paste the script on some database you'll create on your postgres terminal;
-    - create an .env.dev file following the .env.example template using the credentials of the database you've created above;
-    - type "npm start:dev" => the project will run in your localhost:`${ThePort you have setted}`;
+
+1. Clone this repository
+2. Install dependencies
+```bash
+npm i
+```
+3. Run the front-end with
+```bash
+npm start
+```
+4. Open the file "database_backup.sql", then copy and paste the script on some database you'll create on your postgres terminal;
+
+5. create an .env.dev file following the .env.example template using the credentials of the database you've created above;
+
+6. Run the Back End with
+```bash
+npm start:dev
+```
+
+7. The project will run in your localhost:`${ThePort you have setted}`;
+
+8. If you want to run my frontEnd project too, check it out on https://github.com/pedrolpin4/Cineflex_React
 
 ## What comes next?
 
